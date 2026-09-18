@@ -1,0 +1,13 @@
+# 仅用于新安装；用户已保存的方案选择不会被覆盖。
+patch:
+  schema_list:
+    - schema: luna_pinyin_simp
+    - schema: pinyin_t9
+    - schema: double_pinyin
+    - schema: double_pinyin_flypy
+    - schema: double_pinyin_mspy
+    - schema: double_pinyin_abc
+    - schema: double_pinyin_sogou
+    - schema: double_pinyin_ziguang
+    - schema: wubi86
+    - schema: stroke

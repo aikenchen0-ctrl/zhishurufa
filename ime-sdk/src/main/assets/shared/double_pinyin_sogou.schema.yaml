@@ -1,0 +1,49 @@
+# 搜狗与微软双拼共享基础结构，独立保存编码映射，避免修改时相互影响。
+# 映射来源及固定版本见 docs/chinese-input-resources.md。
+__include: double_pinyin_mspy.schema:/
+
+schema:
+  schema_id: double_pinyin_sogou
+  name: 搜狗双拼
+  version: "1.0"
+  author:
+    - Dvel
+    - RIME Developers
+  description: 朙月拼音词库与搜狗双拼编码。
+
+speller:
+  algebra:
+    - erase/^xx$/
+    - derive/^([jqxy])u$/$1v/
+    - derive/^([aoe].*)$/o$1/
+    - xform/^([ae])(.*)$/$1$1$2/
+    - xform/iu$/Q/
+    - xform/[iu]a$/W/
+    - xform/er$|[uv]an$/R/
+    - xform/[uv]e$/T/
+    - xform/v$|uai$/Y/
+    - xform/^sh/U/
+    - xform/^ch/I/
+    - xform/^zh/V/
+    - xform/uo$/O/
+    - xform/[uv]n$/P/
+    - xform/(.)i?ong$/$1S/
+    - xform/[iu]ang$/D/
+    - xform/(.)en$/$1F/
+    - xform/(.)eng$/$1G/
+    - xform/(.)ang$/$1H/
+    - xform/ian$/M/
+    - xform/(.)an$/$1J/
+    - xform/iao$/C/
+    - xform/(.)ao$/$1K/
+    - xform/(.)ai$/$1L/
+    - xform/(.)ei$/$1Z/
+    - xform/ie$/X/
+    - xform/ui$/V/
+    - xform/(.)ou$/$1B/
+    - xform/in$/N/
+    - xform/ing$/;/
+    - xlit/QWRTYUIOPSDFGHMJCKLZXVBN/qwrtyuiopsdfghmjcklzxvbn/
+
+translator:
+  prism: double_pinyin_sogou

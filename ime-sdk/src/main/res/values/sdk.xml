@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="trime_legacy_storage">false</bool>
+    <!-- 宿主可覆盖此资源，自定义系统输入法列表中的名称。 -->
+    <string name="trime_app_name">@string/app_name_release</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sample_app_name">输入法集成示例</string>
+    <string name="trime_app_name">示例宿主输入法</string>
+    <string name="input_hint">输入文本</string>
+    <string name="enable_ime">系统启用输入法</string>
+    <string name="select_ime">选择输入法</string>
+    <string name="ime_settings">输入法设置</string>
+    <string name="ime_disabled">输入法未启用</string>
+    <string name="ime_enabled">输入法已启用，尚未选中</string>
+    <string name="ime_selected">当前输入法：示例宿主输入法</string>
+</resources>
