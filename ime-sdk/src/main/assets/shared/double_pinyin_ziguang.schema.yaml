@@ -1,0 +1,82 @@
+# 只复用通用引擎与词库，紫光的编解码规则在本方案中独立维护。
+# 映射来源及固定版本见 docs/chinese-input-resources.md。
+__include: double_pinyin_mspy.schema:/
+
+schema:
+  schema_id: double_pinyin_ziguang
+  name: 紫光双拼
+  version: "1.0"
+  author:
+    - Dvel
+    - RIME Developers
+  description: 朙月拼音词库与紫光双拼编码。
+
+speller:
+  algebra:
+    - erase/^xx$/
+    - derive/^([jqxy])u$/$1v/
+    - xform/^([aoe].*)$/O$1/
+    - xform/en$/W/
+    - xform/eng$/T/
+    - xform/in$|uai$/Y/
+    - xform/^zh/U/
+    - xform/^sh/I/
+    - xform/uo$/O/
+    - xform/ai$/P/
+    - xform/^ch/A/
+    - xform/[iu]ang$/G/
+    - xform/ang$/S/
+    - xform/ie$/D/
+    - xform/ian$/F/
+    - xform/(.)i?ong$/$1H/
+    - xform/er$|iu$/J/
+    - xform/ei$/K/
+    - xform/uan$/L/
+    - xform/ing$/;/
+    - xform/ou$/Z/
+    - xform/[iu]a$/X/
+    - xform/iao$/B/
+    - xform/ue$|ui$|ve$/N/
+    - xform/un$/M/
+    - xform/ao$/Q/
+    - xform/an$/R/
+    - xlit/WTYUIOPAGSDFHJKLZXBNMQR/wtyuiopagsdfhjklzxbnmqr/
+
+translator:
+  prism: double_pinyin_ziguang
+  preedit_format:
+    - xform/o(\w)/0$1/
+    - xform/([jqxy])n/$1ue/
+    - xform/([nl])n/$1ve/
+    - xform/([dtgkhzcsuai])n/$1ui/
+    - xform/([nljqxb])g/$1iang/
+    - xform/([gkhuai])g/$1uang/
+    - xform/(\w)w/$1en/
+    - xform/(\w)r/$1an/
+    - xform/(\w)t/$1eng/
+    - xform/([jqxylmnbp])y/$1in/
+    - xform/([zcsuaigkh])y/$1uai/
+    - xform/([dtnlgkhrzcsuai])o/$1uo/
+    - xform/(\w)q/$1ao/
+    - xform/(\w)p/$1ai/
+    - xform/(\w)s/$1ang/
+    - xform/(\w)d/$1ie/
+    - xform/(\w)f/$1ian/
+    - xform/([jqx])h/$1iong/
+    - xform/([dtnlgkhrzcsuai])h/$1ong/
+    - xform/0j/0er/
+    - xform/([dnlmjqx])j/$1iu/
+    - xform/(\w)k/$1ei/
+    - xform/(\w)l/$1uan/
+    - xform/(\w)z/$1ou/
+    - xform/([jqxl])x/$1ia/
+    - xform/([gkhuai])x/$1ua/
+    - xform/(\w);/$1ing/
+    - xform/(\w)b/$1iao/
+    - xform/(\w)m/$1un/
+    - "xform/(^|[ '])u/$1zh/"
+    - "xform/(^|[ '])a/$1ch/"
+    - "xform/(^|[ '])i/$1sh/"
+    - xform/0(\w)/$1/
+    - xform/([nl])v/$1ü/
+    - xform/([jqxy])v/$1u/

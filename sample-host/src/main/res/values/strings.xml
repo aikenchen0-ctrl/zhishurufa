@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="capture_draft">存为草稿</string>
+    <string name="save_drafts">保存到本机</string>
+    <string name="restore_drafts">恢复本机草稿</string>
+    <string name="draft_title">草稿</string>
+    <string name="draft_empty">请先输入草稿内容</string>
+    <string name="draft_operation_failed">草稿操作失败，原存储未被清空</string>
+    <string name="drafts_saved">已保存到本机</string>
+    <string name="drafts_restored">已恢复本机草稿</string>
+    <string name="sample_app_name">输入法集成示例</string>
+    <string name="trime_app_name">示例宿主输入法</string>
+    <string name="input_hint">输入文本</string>
+    <string name="enable_ime">系统启用输入法</string>
+    <string name="select_ime">选择输入法</string>
+    <string name="ime_settings">输入法设置</string>
+    <string name="ime_disabled">输入法未启用</string>
+    <string name="ime_enabled">输入法已启用，尚未选中</string>
+    <string name="ime_selected">当前输入法：示例宿主输入法</string>
+</resources>

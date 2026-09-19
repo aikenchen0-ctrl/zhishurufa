@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="trime_draft_panel" type="id" />
+    <string name="trime_draft_preview">Draft</string>
+    <string name="trime_draft_expand">Expand draft</string>
+    <string name="trime_draft_collapse">Collapse draft</string>
+    <string name="trime_draft_retry">Regenerate draft</string>
+    <string name="trime_draft_bind">Use current input field</string>
+    <string name="trime_draft_apply">Insert draft</string>
+    <string name="trime_draft_previous">Previous draft</string>
+    <string name="trime_draft_next">Next draft</string>
+    <string name="trime_draft_clear">Discard draft</string>
+    <string name="trime_draft_no_editor">No readable input field</string>
+    <string name="trime_draft_stale">Input changed. Confirm the input field again.</string>
+    <string name="trime_draft_retry_unavailable">Draft generation is unavailable</string>
+    <string name="ai_draft_title">AI draft</string>
+    <string name="ai_draft_unavailable">AI draft is unavailable</string>
+    <string name="ai_draft_ready">Draft generated</string>
+    <string name="ai_suggestion_ready">Short suggestions generated</string>
+    <string name="ai_action_menu_title">AI action</string>
+    <string name="ai_action_reply">Reply</string>
+    <string name="ai_action_rewrite">Rewrite</string>
+    <string name="ai_action_polish">Polish</string>
+    <string name="ai_action_continue">Continue</string>
+    <string name="ai_action_suggest">Short suggestions</string>
+    <string name="suggestion_writeback_failed">Unable to insert suggestion</string>
+</resources>

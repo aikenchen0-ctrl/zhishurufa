@@ -1,0 +1,327 @@
+# 复用同文配色、候选栏和按键动作，仅组合中文产品需要的布局。
+__include: trime:/
+name: 中文常用键盘
+author: Trime SDK contributors
+
+style:
+  keyboard_height: 256
+  keyboard_height_land: 192
+  key_text_size: 20
+  key_long_text_size: 13
+
+tool_bar:
+  button_spacing: 4
+  primary_button:
+    action: Menu
+    size: [40, 40]
+    foreground: {style: "ic@keyboard", font_size: 22}
+  buttons:
+    - action: Hide
+      size: [36, 40]
+      foreground: {style: "ic@keyboard-close", font_size: 22}
+    - action: Keyboard_edit
+      size: [36, 40]
+      foreground: {style: "ic@cursor-text", font_size: 22}
+    - action: Keyboard_number
+      size: [36, 40]
+      foreground: {style: "ic@numeric", font_size: 22}
+    - action: Mode_switch
+      size: [42, 40]
+      foreground: {style: "中/英", font_size: 16}
+    - action: Ai_draft
+      long_press_action: Ai_menu
+      size: [36, 40]
+      foreground: {style: "AI", font_size: 15}
+
+preset_keys:
+  semicolon: {label: ";", send: semicolon}
+  Keyboard_edit: {label: 编辑, send: Eisu_toggle, select: edit}
+  Keyboard_ascii: {label: ABC, send: Eisu_toggle, select: letter}
+  Keyboard_full_pinyin: {label: 全拼, send: FUNCTION, command: select_schema, option: luna_pinyin_simp}
+  Keyboard_number: {label: 数字, send: Eisu_toggle, select: number}
+  Keyboard_symbols: {label: 符号, send: Eisu_toggle, select: symbols}
+  Ai_draft: {label: AI, send: FUNCTION, command: ai_draft, option: "根据当前内容生成自然、简洁的回复"}
+  Ai_menu: {label: AI, send: FUNCTION, command: ai_menu}
+  Draft_next: {label: 换一个, send: FUNCTION, command: draft_next}
+  Menu: {label: 方案, send: MENU}
+  T9_2: {label: ABC, send: '2'}
+  T9_3: {label: DEF, send: '3'}
+  T9_4: {label: GHI, send: '4'}
+  T9_5: {label: JKL, send: '5'}
+  T9_6: {label: MNO, send: '6'}
+  T9_7: {label: PQRS, send: '7'}
+  T9_8: {label: TUV, send: '8'}
+  T9_9: {label: WXYZ, send: '9'}
+  Syllable: {label: 分词, send: apostrophe}
+  PagePrev: {label: 上页, send: Page_Up}
+  PageNext: {label: 下页, send: Page_Down}
+
+preset_keyboards:
+  default:
+    __include: /preset_keyboards/qwerty
+  qwerty:
+    name: 中文26键
+    ascii_mode: 0
+    reset_ascii_mode: true
+    ascii_keyboard: letter
+    width: 10
+    keys:
+      - {click: q, long_click: '1'}
+      - {click: w, long_click: '2'}
+      - {click: e, long_click: '3'}
+      - {click: r, long_click: '4'}
+      - {click: t, long_click: '5'}
+      - {click: y, long_click: '6'}
+      - {click: u, long_click: '7'}
+      - {click: i, long_click: '8'}
+      - {click: o, long_click: '9'}
+      - {click: p, long_click: '0'}
+      - {width: 5}
+      - {click: a}
+      - {click: s}
+      - {click: d}
+      - {click: f}
+      - {click: g}
+      - {click: h}
+      - {click: j}
+      - {click: k}
+      - {click: l, long_click: semicolon}
+      - {width: 5}
+      - {click: Shift_L, composing: Syllable, width: 15}
+      - {click: z}
+      - {click: x}
+      - {click: c}
+      - {click: v}
+      - {click: b}
+      - {click: n}
+      - {click: m}
+      - {click: BackSpace, width: 15}
+      - {click: Menu, width: 12}
+      - {click: Keyboard_number, long_click: Keyboard_edit, width: 12}
+      - {click: comma, width: 10}
+      - {click: space, long_click: Keyboard_ascii, swipe_left: Left, swipe_right: Right, width: 32}
+      - {click: period, width: 10}
+      - {click: Keyboard_symbols, width: 12}
+      - {click: Draft_next, width: 10}
+      - {click: Return, width: 12}
+  letter:
+    __include: /preset_keyboards/qwerty
+    name: 英文26键
+    ascii_mode: 1
+    ascii_keyboard: ''
+  luna_pinyin_simp:
+    __include: /preset_keyboards/qwerty
+  double_pinyin:
+    __include: /preset_keyboards/qwerty
+  double_pinyin_flypy:
+    __include: /preset_keyboards/qwerty
+  double_pinyin_abc:
+    __include: /preset_keyboards/qwerty
+  double_pinyin_mspy:
+    __include: /preset_keyboards/qwerty
+    name: 带分号双拼
+    keys:
+      - {click: q, long_click: '1'}
+      - {click: w, long_click: '2'}
+      - {click: e, long_click: '3'}
+      - {click: r, long_click: '4'}
+      - {click: t, long_click: '5'}
+      - {click: y, long_click: '6'}
+      - {click: u, long_click: '7'}
+      - {click: i, long_click: '8'}
+      - {click: o, long_click: '9'}
+      - {click: p, long_click: '0'}
+      - {click: a}
+      - {click: s}
+      - {click: d}
+      - {click: f}
+      - {click: g}
+      - {click: h}
+      - {click: j}
+      - {click: k}
+      - {click: l}
+      - {click: semicolon}
+      - {click: Shift_L, composing: Syllable, width: 15}
+      - {click: z}
+      - {click: x}
+      - {click: c}
+      - {click: v}
+      - {click: b}
+      - {click: n}
+      - {click: m}
+      - {click: BackSpace, width: 15}
+      - {click: Menu, width: 12}
+      - {click: Keyboard_number, width: 12}
+      - {click: comma, width: 10}
+      - {click: space, long_click: Keyboard_ascii, swipe_left: Left, swipe_right: Right, width: 32}
+      - {click: period, width: 10}
+      - {click: Keyboard_symbols, width: 12}
+      - {click: Draft_next, width: 10}
+      - {click: Return, width: 12}
+  double_pinyin_sogou:
+    __include: /preset_keyboards/double_pinyin_mspy
+  double_pinyin_ziguang:
+    __include: /preset_keyboards/double_pinyin_mspy
+  wubi86:
+    __include: /preset_keyboards/qwerty
+    name: 五笔86键盘
+  pinyin_t9:
+    name: 九宫拼音
+    ascii_mode: 0
+    reset_ascii_mode: true
+    ascii_keyboard: letter
+    width: 25
+    keys:
+      - {click: Menu, width: 12.5}
+      - {click: Syllable}
+      - {click: T9_2, label_symbol: '2'}
+      - {click: T9_3, label_symbol: '3'}
+      - {click: BackSpace, width: 12.5}
+      - {click: PagePrev, width: 12.5}
+      - {click: T9_4, label_symbol: '4'}
+      - {click: T9_5, label_symbol: '5'}
+      - {click: T9_6, label_symbol: '6'}
+      - {click: PageNext, width: 12.5}
+      - {click: Keyboard_symbols, width: 12.5}
+      - {click: T9_7, label_symbol: '7'}
+      - {click: T9_8, label_symbol: '8'}
+      - {click: T9_9, label_symbol: '9'}
+      - {click: Draft_next, width: 12.5}
+      - {click: Return, width: 12.5}
+      - {click: Keyboard_number, width: 12.5}
+      - {click: comma}
+      - {click: space, long_click: Keyboard_ascii, swipe_left: Left, swipe_right: Right}
+      - {click: period}
+      - {click: Keyboard_full_pinyin, width: 12.5}
+  number:
+    name: 数字键盘
+    ascii_mode: 1
+    reset_ascii_mode: true
+    width: 25
+    keys:
+      - {click: KP_1}
+      - {click: KP_2}
+      - {click: KP_3}
+      - {click: BackSpace}
+      - {click: KP_4}
+      - {click: KP_5}
+      - {click: KP_6}
+      - {click: KP_Add}
+      - {click: KP_7}
+      - {click: KP_8}
+      - {click: KP_9}
+      - {click: KP_Subtract}
+      - {click: Keyboard_default}
+      - {click: KP_0}
+      - {click: KP_Decimal}
+      - {click: Return}
+  phone:
+    name: 电话键盘
+    ascii_mode: 1
+    reset_ascii_mode: true
+    width: 25
+    keys:
+      - {click: '1'}
+      - {click: '2'}
+      - {click: '3'}
+      - {click: BackSpace}
+      - {click: '4'}
+      - {click: '5'}
+      - {click: '6'}
+      - {click: {commit: '+', label: '+'}}
+      - {click: '7'}
+      - {click: '8'}
+      - {click: '9'}
+      - {click: {commit: '*', label: '*'}}
+      - {click: Keyboard_default}
+      - {click: '0', long_click: '+'}
+      - {click: {commit: '#', label: '#'}}
+      - {click: Return}
+  datetime:
+    name: 日期时间键盘
+    ascii_mode: 1
+    reset_ascii_mode: true
+    width: 25
+    keys:
+      - {click: '1'}
+      - {click: '2'}
+      - {click: '3'}
+      - {click: BackSpace}
+      - {click: '4'}
+      - {click: '5'}
+      - {click: '6'}
+      - {click: {commit: '/', label: '/'}}
+      - {click: '7'}
+      - {click: '8'}
+      - {click: '9'}
+      - {click: {commit: '-', label: '-'}}
+      - {click: Keyboard_default}
+      - {click: '0'}
+      - {click: {commit: ':', label: ':', text: ':'}, long_click: {commit: '.', label: '.'}}
+      - {click: Return}
+  symbols:
+    name: 常用符号
+    ascii_mode: 1
+    reset_ascii_mode: true
+    width: 20
+    keys:
+      - {click: {commit: '，', label: '，'}}
+      - {click: {commit: '。', label: '。'}}
+      - {click: {commit: '？', label: '？'}}
+      - {click: {commit: '！', label: '！'}}
+      - {click: BackSpace}
+      - {click: {commit: '：', label: '：'}}
+      - {click: {commit: '；', label: '；'}}
+      - {click: {commit: '、', label: '、'}}
+      - {click: {commit: '“', label: '“'}}
+      - {click: {commit: '”', label: '”'}}
+      - {click: {commit: '（', label: '（'}}
+      - {click: {commit: '）', label: '）'}}
+      - {click: '@'}
+      - {click: '#'}
+      - {click: '/'}
+      - {click: Keyboard_default}
+      - {click: Keyboard_number}
+      - {click: space}
+      - {click: {commit: '…', label: '…'}}
+      - {click: Return}
+  edit:
+    name: 文本编辑
+    preserve_ascii_mode: true
+    width: 25
+    keys:
+      - {click: select_all}
+      - {click: Home}
+      - {click: Up}
+      - {click: End}
+      - {click: cut}
+      - {click: Left}
+      - {click: Down}
+      - {click: Right}
+      - {click: copy}
+      - {click: paste}
+      - {click: undo}
+      - {click: redo}
+      - {click: Keyboard_default}
+      - {click: space}
+      - {click: BackSpace}
+      - {click: Return}
+  stroke:
+    name: 笔画键盘
+    ascii_mode: 0
+    reset_ascii_mode: true
+    ascii_keyboard: letter
+    width: 25
+    keys:
+      - {click: h, label: 一}
+      - {click: s, label: 丨}
+      - {click: p, label: 丿}
+      - {click: BackSpace}
+      - {click: n, label: 丶}
+      - {click: z, label: 乙}
+      - {click: Menu}
+      - {click: Keyboard_edit}
+      - {click: Keyboard_number}
+      - {click: Keyboard_symbols}
+      - {click: space}
+      - {click: Return}

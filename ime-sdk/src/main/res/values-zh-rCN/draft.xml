@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="trime_draft_preview">草稿</string>
+    <string name="trime_draft_expand">展开草稿</string>
+    <string name="trime_draft_collapse">收起草稿</string>
+    <string name="trime_draft_retry">重新生成</string>
+    <string name="trime_draft_bind">关联当前输入框</string>
+    <string name="trime_draft_apply">写入草稿</string>
+    <string name="trime_draft_previous">上一条草稿</string>
+    <string name="trime_draft_next">下一条草稿</string>
+    <string name="trime_draft_clear">丢弃草稿</string>
+    <string name="trime_draft_no_editor">当前没有可读取的输入框</string>
+    <string name="trime_draft_stale">输入内容已变化，请重新确认输入框</string>
+    <string name="trime_draft_retry_unavailable">草稿生成服务不可用</string>
+    <string name="ai_draft_title">AI 草稿</string>
+    <string name="ai_draft_unavailable">AI 草稿暂不可用</string>
+    <string name="ai_draft_ready">草稿已生成</string>
+    <string name="ai_suggestion_ready">短推荐已生成</string>
+    <string name="ai_action_menu_title">AI 操作</string>
+    <string name="ai_action_reply">生成回复</string>
+    <string name="ai_action_rewrite">重写</string>
+    <string name="ai_action_polish">润色</string>
+    <string name="ai_action_continue">续写</string>
+    <string name="ai_action_suggest">短推荐</string>
+    <string name="suggestion_writeback_failed">建议写入失败</string>
+</resources>
